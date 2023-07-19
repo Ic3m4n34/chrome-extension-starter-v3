@@ -2,12 +2,11 @@ const webpack = require('webpack');
 const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
 
-
 const config = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'extension'),
-    filename: 'content.js'
+    filename: 'content.js',
   },
   devtool: 'source-map',
   module: {
@@ -15,9 +14,9 @@ const config = {
       {
         test: /\.js$/,
         use: 'babel-loader',
-        exclude: /node_modules/
-      }
-    ]
+        exclude: /node_modules/,
+      },
+    ],
   },
   optimization: {
     minimizer: [
